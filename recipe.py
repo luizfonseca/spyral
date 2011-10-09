@@ -5,7 +5,7 @@ import cherrypy
 #from flask import Flask
 
 class Recipe:
-  @cherrypy.exposed
+  @cherrypy.expose
   def index(self):
     return "It's working"
 
