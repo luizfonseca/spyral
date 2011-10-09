@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-from Flask import Flask
+from flask import Flask
 
 
 app = Flask(__name__)
