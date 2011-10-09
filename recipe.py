@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 import os
-import cherrypy
-
-class Recipe:
-  @cherrypy.expose
-  def index(self):
-    return "It's working"
+from Flask import Flask
 
 
-cherrypy.quickstart(Recipe())
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+  return "It's working"
+
+
+
+if __name__ == "__main__":
+  port = int(os.environ.get("PORT", 5000))
+  app.run(host = "0.0.0.0", port = port)
