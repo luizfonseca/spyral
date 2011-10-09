@@ -1,16 +1,22 @@
 # -*- coding: utf-8 -*-
 import os
-from flask import Flask
+import tornado.ioloop
+import tornado.web
 
 
-app = Flask(__name__)
 
-@app.route("/")
-def hello():
-  return "It's working"
+class MainHandler(tornado.web.RequestHandler):
+  def get(self):
+    self.write("Hello, world")
 
+
+
+application = tornado.web.Application([
+  (r"/", MainHandler)
+])
 
 
 if __name__ == "__main__":
   port = int(os.environ.get("PORT", 5000))
-  app.run(host = "0.0.0.0", port = port)
+  application.listen(port)
+  tornado.ioloop.IOLoop.instance().start()
