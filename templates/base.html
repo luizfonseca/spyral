@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link rel="stylesheet" href="{{ static_url ('stylesheets/application.css') }}"/>
+  <title>Find then Cook :-) </title>
+
+</head>
+<body>
+  <header>
+    <a href=""><img src="{{ static_url ('images/tasty_logo.jpg')}}" /> </a>
+  </header>
+  {{ test }}
+  <section id="content">
+    <section id="search">
+      <form action="/find" method="get" accept-charset="utf-8">
+        <p>
+          <input type="text" name="recipe" value="" class="search" id="recipe" placeholder="Find any kind of recipe :)"/>
+        </p>
+        <p><input type="submit" value="Continue &rarr;"/></p>
+      </form>
+    </section>
+  </section>
+
+  <footer>
+
+  </footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="{{ static_url("javascripts/libs/jquery-1.6.2.min.js")}}"><\/script>')</script>
+    <script defer src="{{ static_url('javascripts/plugins.js')}}"></script>
+    <script defer src="{{ static_url('javascripts/application.js')}}"></script>
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+
+</body>
+</html>
