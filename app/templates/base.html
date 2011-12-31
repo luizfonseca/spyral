@@ -10,23 +10,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <link rel="stylesheet" href="{{ static_url ('stylesheets/application.css') }}"/>
-  <title>Find then Cook :-) </title>
+  <title>Spyral - a web framework powered by Tornado &gt;3.</title>
 
 </head>
 <body>
   <header>
-    <a href=""><img src="{{ static_url ('images/tasty_logo.jpg')}}" /> </a>
+    <h1 id="name">Spyral!</h1>
   </header>
   {{ test }}
   <section id="content">
-    <section id="search">
-      <form action="/find" method="get" accept-charset="utf-8">
-        <p>
-          <input type="text" name="recipe" value="" class="search" id="recipe" placeholder="Find any kind of recipe :)"/>
-        </p>
-        <p><input type="submit" value="Continue &rarr;"/></p>
-      </form>
-    </section>
   </section>
 
   <footer>
@@ -34,8 +26,8 @@
   </footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="{{ static_url("javascripts/libs/jquery-1.6.2.min.js")}}"><\/script>')</script>
-    <script defer src="{{ static_url('javascripts/plugins.js')}}"></script>
-    <script defer src="{{ static_url('javascripts/application.js')}}"></script>
+  <script defer src="{{ static_url('javascripts/plugins.js')}}"></script>
+  <script defer src="{{ static_url('javascripts/application.js')}}"></script>
 
   <!--[if lt IE 7 ]>
     <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>

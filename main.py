@@ -1,21 +1,19 @@
 # -*- coding: utf-8 -*-
+
 import os, sys
-import tornado.ioloop
-import tornado.web
-import tornado.httpserver
-from handlers import *
+import tornado.ioloop, tornado.web, tornado.httpserver
+from app.config   import *
+from app.handlers import *
 
 def main():
   settings = {
-    'static_path'   : os.path.join(os.path.dirname(__file__), "static"),
-    'template_path' : os.path.join(os.path.dirname(__file__), "templates"),
+    'static_path'   : os.path.join(os.path.dirname(__file__), "public"),
+    'template_path' : os.path.join(os.path.dirname(__file__), "app/templates"),
     'debug': True
   }
 
   app = tornado.web.Application([
     (r'/', application.ApplicationHandler),
-    (r'/recipe', recipe.RecipeHandler),
-    (r'/find', recipe.FindRecipeHandler)
   ], **settings)
 
   port = int(os.environ.get("PORT", 5000))
